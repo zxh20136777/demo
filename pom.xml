@@ -14,20 +14,35 @@
 	<name>demo</name>
 	<description>Demo project for Spring Boot</description>
 
+	<!-- 常量配置 -->
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
 
+	<!-- 项目相关的所有依赖 -->
 	<dependencies>
+        <!--spring web spring boot 启动依赖 starter -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<version>2.3.7.RELEASE</version>
+			<scope>compile</scope>
+			<!-- 依赖范围 . 在项目发布过程中 , 帮助决定哪些构件被包括进来 . 欲知详情请参考依赖机制 .
+                  - compile ：默认范围 , 用于编译
+                  - provided：类似于编译 , 但支持你期待jdk或者容器提供 , 类似于classpath
+                  - runtime: 在执行时需要使用
+                  - test:    用于test任务时使用
+                  - system: 需要外在提供相应的元素 . 通过systemPath来取得
+                  - systemPath: 仅用于范围为system . 提供相应的路径
+                  - optional:   当项目自身被依赖时 , 标注依赖是否传递 . 用于连续依赖时使用 -->
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+			<!-- 当计算传递依赖时 , 从依赖构件列表里 , 列出被排除的依赖构件集。
+			即告诉maven你只依赖指定的项目 , 不依赖项目的依赖 . 此元素主要用于解决版本冲突问题 -->
 			<exclusions>
 				<exclusion>
 					<groupId>org.junit.vintage</groupId>
@@ -35,15 +50,11 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-			<version>2.3.7.RELEASE</version>
-			<scope>compile</scope>
-		</dependency>
 	</dependencies>
 
+	<!-- 构建项目需要的信息 -->
 	<build>
+		<!-- 使用的插件列表 -->
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

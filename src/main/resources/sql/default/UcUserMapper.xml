@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.generate.UcUserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.demo.entity.UcUser">
+        <id column="id" property="id" />
+        <result column="user_code" property="userCode" />
+        <result column="passwd" property="passwd" />
+        <result column="enabled" property="enabled" />
+        <result column="appellation" property="appellation" />
+        <result column="first_name" property="firstName" />
+        <result column="last_name" property="lastName" />
+        <result column="country_name_en" property="countryNameEn" />
+        <result column="country_code_en" property="countryCodeEn" />
+        <result column="tel_no_country" property="telNoCountry" />
+        <result column="tel_no_area" property="telNoArea" />
+        <result column="email" property="email" />
+        <result column="nick_name" property="nickName" />
+        <result column="root_role" property="rootRole" />
+        <result column="has_check_email" property="hasCheckEmail" />
+        <result column="mobile" property="mobile" />
+        <result column="has_check_mobile" property="hasCheckMobile" />
+        <result column="has_im_account" property="hasImAccount" />
+        <result column="account_id" property="accountId" />
+        <result column="deleted" property="deleted" />
+        <result column="create_date" property="createDate" />
+        <result column="modify_date" property="modifyDate" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, user_code, passwd, enabled, appellation, first_name, last_name, country_name_en, country_code_en, tel_no_country, tel_no_area, email, nick_name, root_role, has_check_email, mobile, has_check_mobile, has_im_account, account_id, deleted, create_date, modify_date
+    </sql>
+
+</mapper>

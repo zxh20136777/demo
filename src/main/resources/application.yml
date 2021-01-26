@@ -2,6 +2,8 @@ server:
   port: 8088
 
 spring:
+  profiles:
+    active: dev
   #mysql
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -10,7 +12,13 @@ spring:
     password: 1233
 #mybatis-plus
 mybatis-plus:
-  mapper-locations: classpath:resources/demo/mapper/xml/*.xml
+  mapper-locations: classpath:/sql/**/*.xml
   #属性为true来开启驼峰功能
   configuration:
     map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+# 日志配置文件
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    root: info
